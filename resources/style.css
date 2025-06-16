@@ -1,0 +1,72 @@
+:root{
+  --coral-from-logo: hsl(3.3, 100%, 80%);
+  --white-from-logo: hsl(240, 3.4%, 94.3%);
+  --coffee: hsl(22, 27%, 32%);
+  --ash-gray: hsl(180, 8%, 72%);
+}
+
+.oi-regular {
+  font-family: "Oi", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+body, h1, h2, p {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+}
+
+.content-container{
+  height: 100vh;
+  background-image: url("./eric-nopanen-8e0EHPUx3Mo-unsplash.jpg");
+  background-size: cover;
+  display: grid;
+  grid-template-rows: auto min-content;
+}
+
+.CTA-container, .credits-container {
+  padding: 1rem;
+}
+
+.CTA-container {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  background-color: hsla(0, 0%, 0%, 0.5);
+}
+
+.logo {
+  height: min(40vw, 16rem);
+}
+
+.brand-container {
+  display: flex;
+  align-items: center;
+  gap: max(1rem, 4vw);
+}
+
+.brand {
+  font-size: max(1.5rem, 6vw);
+  color: var(--coral-from-logo)
+}
+
+.CTA, .credits {
+  text-align: center;
+}
+
+.CTA {
+  color: var(--white-from-logo);
+  font-size: max(4rem, 8vw);
+}
+
+.credits-container {
+  background-color: var(--coffee);
+}
+
+.credits {
+  color: var(--ash-gray);
+  font-family: 'Lucida Sans', sans-serif;
+}
