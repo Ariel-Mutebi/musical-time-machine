@@ -18,18 +18,15 @@ REDIRECT_URI = "https://ariel-mutebi.github.io/musical-time-machine/"
 # song_titles = [re.sub(r'[\n\t]', '', h3.getText()) for h3 in let_him_cook.select("li>h3#title-of-a-story")]
 # print(song_titles)
 
-# Test Spotify authentication by getting my liked songs
+# Test Spotify authentication by getting my user id
 spotify = Spotify(
     auth_manager=SpotifyOAuth(
         client_id=os.environ.get("SPOTIFY_CLIENT_ID"),
         client_secret=os.environ.get("SPOTIFY_CLIENT_SECRET"),
         redirect_uri=REDIRECT_URI,
-        scope="user-library-read"
     )
 )
 
-my_liked_songs = spotify.current_user_saved_tracks()
+my_account = spotify.current_user()
 
-for index, item in enumerate(my_liked_songs["items"], start=1):
-    track = item["track"]
-    print(f"{index}. {track['name']} by {track['artists'][0]['name']}")
+print(my_account["id"])
